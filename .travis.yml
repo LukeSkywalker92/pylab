@@ -1,22 +1,19 @@
 ncsudo: required
-
 language: python
-
 python:
-  - 3.7-dev
-
+- 3.7-dev
 install:
-  - pip install pipenv
-  - pipenv install --dev
-
+- pip install pipenv
+- pipenv install --dev
 script:
-  - pipenv run pytest
-
+- echo bla
+#script:
+#- pipenv run pytest
 deploy:
   provider: pypi
   user: lukecodewalker
   password:
-    secure: I/YdGexN0bIPIltYZOkMGr9Kpaby3XOfrAac0WvUhYPpNmaNyAmlCB/eUzq5r4n6chsmiWBcOj2k1ePsrtweqra0aSgAYLGv7jN8xtSMWk1rkdzB4zbMVjyvyrIyNYCtf+dmhkWGLN685WmrrTujGuGTE9IpmCqz8sBWbiLToyodAc1NK6xTF+z1NqdKwufLXKoj4dzHSmt6WHyuxGS0f0UbW8znBL6DwHUY2UFFBCZUQUZkNFS+K1Hf+LXeNU2AwDMcTf9V6daUmTU0lWdYlrzCHdbL0kMazFVGnXF3NOSoV3F4+CnH/r5ryNA4dDtkrnyYUhL3o3aDABrlW6dhzJ0mM2v+RhzPm+n2Q0AD0R/gzv64DthNKZxeJI2RQ91T/z/tOgqJi6p8FH7AbpYIJl1ztO4TCYzyTKh9FqBImPQo+esXxF968qPy5ROmCNl5SbAKsy48m9NpsH1w+mluYUsq+fOyqctZuNa1aZxRmw9vXTY606+Fx3LE9oj4RnDNA4GxD+O7M1SA2+6uDJ+8rL87RAeOD0ZPwUyPSsMlM5DpU2NLMc+ZSxuIVEjo0E0+PP7eawYtUN+stb62Xo/VL2/qpuAWqaqu6SQCtVUTyCLnzDhJCWGd24o4ssILsTr2gG1A769YaJkc/dIYwz79HVzMtXPUiMu63Ji9TB1mt4k=
+    secure: DYEUCY18TL+9VAqciGVzxhWBjfOyZJxJ9jcR6RyKpa/ky8L0RZukXzdwUetRJfys0s5fX4sQzjCMMK8479e8I/og2qAIBl6bq0IHgWJbHlSsx4ugyMIrW03Pd86k7EHs/pUZUjIsf9SROlltnqSkKZRHTOPKrDQSzBUP2+/WHXZN3zG6zz7LqjncRxH2k97Hea5LNpzU+Qnbt2hQGWAkLEboUv6Uf3OBfPyXPUlNHfRxej1QEtOyFPpE1lX9Y0+muYpMQVHPJr6NbMUFOm3bNEhiAs+8TbK19wtd3P02lEeuxxZK3i1ddiHPuC9WeQr/rx1qTQyb+lRibPeVz6Uo1opOIju9LIcr0elQ+J/RtS9rdqq13gqAUgTnECpOsiZt8MWBDdMUXA4Oaf4ix+WRjhSjDL9zFtIR6tXZe4BF7nRXBhdlCCrT0NwUWS1RJTiXn/+uSDb5S2/WZHlAxVxn7ByRFc7MM06+1fy1Qs+F5YiOAEsegaiZNlje5vGfQ6qPpXbGWCJN+F09v4UoXjYeMN7V//pkj/WRrlGV6XqUw6sWycDY03wkv8eVkiqtcNfpM3Bf2du7cy7K66tNif+bbDJvaQVvbG4dR9wZYmqJT0+qRGQglMx2QttZyUWuU80CLNKrSKyKW+I5bURJzc85FZu0qGR4PU/viaW3lhxrJcw=
   on:
     tags: true
   distributions: bdist_wheel
