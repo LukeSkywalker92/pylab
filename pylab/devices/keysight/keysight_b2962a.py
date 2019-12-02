@@ -1,10 +1,10 @@
-import pyvisa
+from pylab.devices import pyvisa_resource_manager
 
 class KeysightB2962A():
 
     def __init__(self, identifier):
         self._identifier = identifier
-        self._instrument = pyvisa.ResourceManager('@ni').open_resource(self._identifier)
+        self._instrument = pyvisa_resource_manager.open_resource(self._identifier)
         self.reset()
 
     def get_idn(self):
