@@ -29,7 +29,9 @@ setup(
     python_requires=">=3.7.*",
     install_requires=['PyVISA',
                       'PyVISA-py',
-                      'pyusb'],
+                      'pyusb',
+                      'tabulate',
+                      'matplotlib'],
     license=about['__license__'],
     zip_safe=False,
     entry_points={

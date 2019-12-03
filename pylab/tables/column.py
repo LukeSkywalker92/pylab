@@ -7,7 +7,10 @@ class Column():
         self.values = []
 
     def measure(self):
-        self.values.append(self.callback())
+        if callable(self.callback):
+            self.values.append(self.callback())
+        else:
+            self.values.append(self.callback.value)
 
     def generate_header(self):
         return self.name + " [" + self.unit + "]"

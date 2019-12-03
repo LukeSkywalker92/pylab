@@ -4,10 +4,14 @@ import time
 
 keysight = KeysightB2962A('USB0::0x0957::0xD218::MY52351110::0::INSTR')
 keysight.set_channel_mode(1, 'voltage')
+keysight.set_channel_sense_mode(2, 'voltage', 1, 2)
 keysight.set_voltage_output(1, 0)
 keysight.enable_channel(1)
+keysight.enable_channel(2)
 time.sleep(0.1)
 for voltage in np.arange(0, 105e-3, 5e-3):
     keysight.set_voltage_output(1, voltage)
-    time.sleep(0.1)
+    print(keysight.measure_voltage(2))
+    #time.sleep(0.1)
 keysight.disable_channel(1)
+keysight.disable_channel(2)

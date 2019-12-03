@@ -47,3 +47,19 @@ class KeysightB2962A():
         self._instrument.write(':sour'+ str(channel)+':volt:trig ' + str(amplitude))
         self._instrument.write(':sour'+ str(channel)+':puls:widt ' + str(width))
         self._instrument.write(':init (@'+ str(channel)+')')
+
+    def set_channel_sense_mode(self, channel, mode, integration_time, limit):
+        mode_string = ''
+        if mode == 'current':
+            mode_string = 'curr'
+        elif mode == 'voltage':
+            mode_string = 'volt'
+        self._instrument.write(':sense' + str(channel) + ':func: ""' + mode_string + '""')
+        self._instrument.write(':sense' + str(channel) + ':' + mode_string + ':nplc ' +str(integration_time))
+        self._instrument.write(':sense' + str(channel) + ':' + mode_string + ':prot ' +str(limit))
+
+    def measure_current(self, channel):
+        return self._instrument.query(':meas:curr? (@'+ str(channel) +')')
+
+    def measure_voltage(self, channel):
+        return self._instrument.query(':meas:volt? (@'+ str(channel) +')')
